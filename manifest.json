@@ -1,0 +1,155 @@
+{
+  "name": "app-argus",
+  "version": "1.0.0",
+  "description": "App Argus",
+  "auth": {
+    "description": {
+      "title": "Credenciais de acesso ao sistemas Argus (Doc9)",
+      "body": "Para utilizar esta aplicação, é necessário fornecer usuário e senha do sistema Doc9.",
+      "footer": "",
+      "link": "https://sistema.doc9.com.br"
+    },
+    "params": [
+      {
+        "name": "doc9User",
+        "type": "string",
+        "inputType": "text",
+        "required": true
+      },
+      {
+        "name": "doc9Pass",
+        "type": "string",
+        "inputType": "password",
+        "required": true
+      }
+    ]
+  },
+  "functions": {
+    "adicionaMonitoramento": {
+      "name": "Argus - Adiciona Monitoramento",
+      "icon": "Gavel",
+      "script": "dist/adicionaMonitoramento.js",
+      "description": "Adiciona um novo monitoramento no sistema Argus (Doc9) para o documento especificado.",
+      "category": "doc9",
+      "values": {
+        "documento": "000000000000"
+      },
+      "params": [
+        {
+          "name": "documento",
+          "type": "string",
+          "inputType": "text",
+          "required": true,
+          "label": "Número do documento a ser monitorado"
+        }
+      ],
+      "help": {
+        "title": "Como usar a função adicionaMonitoramento",
+        "body": "Para utilizar a função adicionaMonitoramento, forneça o número do documento a ser monitorado. A função adicionará um novo monitoramento no sistema Argus (Doc9) para o documento especificado.",
+        "footer": "Certifique-se de que o número do documento esteja correto."
+      }
+    },
+    "atualizaMonitoramento": {
+      "name": "Argus - Atualiza Monitoramento",
+      "icon": "User",
+      "script": "dist/atualizaMonitoramento.js",
+      "description": "Atualiza um monitoramento existente no sistema Argus (Doc9) para o documento especificado.",
+      "category": "doc9",
+      "values": {
+        "documentoID": "1"
+      },
+      "params": [
+        {
+          "name": "documentoID",
+          "type": "string",
+          "inputType": "text",
+          "required": false,
+          "label": "ID do documento a ser atualizado"
+        }
+      ],
+      "help": {
+        "title": "Como usar a função atualizaMonitoramento",
+        "body": "Para utilizar a função atualizaMonitoramento, forneça o ID do documento a ser atualizado. A função atualizará um monitoramento existente no sistema Argus (Doc9) para o documento especificado.",
+        "footer": "Certifique-se de que o ID do documento esteja correto."
+      }
+    },
+    "listaMonitorados": {
+      "name": "Argus - Lista Monitorados",
+      "icon": "Scale",
+      "script": "dist/listaMonitorados.js",
+      "description": "Lista todos os documentos que estão sendo monitorados no sistema Argus (Doc9).",
+      "category": "doc9",
+      "values": {
+        "filtro": ""
+      },
+      "params": [
+        {
+          "name": "filtro",
+          "type": "string",
+          "inputType": "text",
+          "required": false,
+          "label": "Filtro (documento ou nome)"
+        }
+      ],
+      "help": {
+        "title": "Como usar a função listaMonitorados",
+        "body": "Para utilizar a função listaMonitorados, forneça o filtro desejado para buscar documentos monitorados. A função retornará uma lista de documentos que estão sendo monitorados no sistema Argus (Doc9).",
+        "footer": "Certifique-se de que o filtro esteja correto para obter resultados precisos."
+      }
+    },
+    "visualizaDetalhes": {
+      "name": "Argus - Visualiza Detalhes do Monitoramento",
+      "icon": "Gavel",
+      "script": "dist/visualizaDetalhes.js",
+      "description": "Visualiza os detalhes de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
+      "category": "doc9",
+      "values": {
+        "documentoID": "0000000-00.0000.0.00.0000"
+      },
+      "params": [
+        {
+          "name": "documentoID",
+          "type": "string",
+          "inputType": "text",
+          "required": true,
+          "label": "Número do processo no formato CNJ"
+        }
+      ],
+      "help": {
+        "title": "Como usar a função visualizaDetalhes",
+        "body": "Para utilizar a função visualizaDetalhes, use o documentoID.",
+        "footer": "Certifique-se de que o documentoID esteja correto. Você pode obter através da função listaMonitorados."
+      }
+    },
+    "visualizaOcorrencias": {
+      "name": "Argus - Visualiza Ocorrências do Monitoramento",
+      "icon": "Gavel",
+      "script": "dist/visualizaOcorrencias.js",
+      "description": "Visualiza as ocorrências de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
+      "category": "doc9",
+      "values": {
+        "documentoID": "1"
+      },
+      "params": [
+        {
+          "name": "documentoID",
+          "type": "string",
+          "inputType": "text",
+          "required": true,
+          "label": "ID do documento"
+        }
+      ],
+      "help": {
+        "title": "Como usar a função visualizaOcorrencias",
+        "body": "Para utilizar a função visualizaOcorrencias, use o documentoID.",
+        "footer": "Certifique-se de que o documentoID esteja correto. Você pode obter através da função listaMonitorados."
+      }
+    }
+  },
+  "config": {
+    "timeout": 30000,
+    "max_retries": 3,
+    "cache_ttl": 3600
+  },
+  "mcp": true
+}

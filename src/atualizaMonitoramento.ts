@@ -2,7 +2,7 @@ import docgo from "docgo-sdk";
 import { urlBase, getToken } from "./utils";
 
 interface AtualizaMonitoramentoParams {
-  documento: string;
+  documentoID: string;
 }
 
 async function atualizaMonitoramento(
@@ -16,7 +16,7 @@ async function atualizaMonitoramento(
     ) {
       params = params[0];
     }
-    if (!params.documento) {
+    if (!params.documentoID) {
       console.log(
         docgo.result(false, null, "É necessário informar documento.")
       );
@@ -51,7 +51,7 @@ async function atualizaMonitoramento(
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          documento: params.documento,
+          documentoID: params.documentoID,
         }),
       }
     );
