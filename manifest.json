@@ -32,9 +32,17 @@
       "description": "Adiciona um novo monitoramento no sistema Argus (Doc9) para o documento especificado.",
       "category": "doc9",
       "values": {
+        "tipo": "1 (CPF) | 2 (CNPJ)",
         "documento": "000000000000"
       },
       "params": [
+        {
+          "name": "tipo",
+          "type": "string",
+          "inputType": "text",
+          "required": true,
+          "label": "Tipo de documento: 1 para CPF, 2 para CNPJ"
+        },
         {
           "name": "documento",
           "type": "string",
@@ -104,7 +112,7 @@
       "description": "Visualiza os detalhes de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
       "category": "doc9",
       "values": {
-        "documentoID": "0000000-00.0000.0.00.0000"
+        "documentoID": "1"
       },
       "params": [
         {
@@ -121,10 +129,10 @@
         "footer": "Certifique-se de que o documentoID esteja correto. Você pode obter através da função listaMonitorados."
       }
     },
-    "visualizaOcorrencias": {
-      "name": "Argus - Visualiza Ocorrências do Monitoramento",
+    "visualizaOcorrencia": {
+      "name": "Argus - Visualiza Ocorrência do Monitoramento",
       "icon": "Gavel",
-      "script": "dist/visualizaOcorrencias.js",
+      "script": "dist/visualizaOcorrencia.js",
       "description": "Visualiza as ocorrências de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
       "category": "doc9",
       "values": {
@@ -140,7 +148,7 @@
         }
       ],
       "help": {
-        "title": "Como usar a função visualizaOcorrencias",
+        "title": "Como usar a função visualizaOcorrencia",
         "body": "Para utilizar a função visualizaOcorrencias, use o documentoID.",
         "footer": "Certifique-se de que o documentoID esteja correto. Você pode obter através da função listaMonitorados."
       }

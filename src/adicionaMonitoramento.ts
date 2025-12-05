@@ -2,7 +2,7 @@ import docgo from "docgo-sdk";
 import { urlBase, getToken } from "./utils";
 
 interface AdicionaMonitoramentoParams {
-  tipo: number;
+  tipo: string;
   documento: string;
 }
 
@@ -44,25 +44,23 @@ async function adicionaMonitorament(
       return;
     }
 
+    const formData = new URLSearchParams();
+    formData.append("tipo_documento", params.tipo);
+    formData.append("documento", params.documento);
+
     const response = await fetch(
       `${urlBase}/_sol/API/cliente-v2/argus/adicionar_monitoramento/endpoint.php`,
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({
-          tipo: params.tipo,
-          documento: params.documento,
-        }),
+        body: formData,
       }
     );
 
     const data = await response.json();
-    console.log(
-      docgo.result(true, data, "Monitoramento adicionado com sucesso.")
-    );
+    console.log(docgo.result(true, data, null));
   } catch (error) {
     console.log(
       docgo.result(false, null, `Erro ao adicionar monitoramento: ${error}`)

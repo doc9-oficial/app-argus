@@ -54,7 +54,7 @@ async function listaMonitorados(params: ListaMonitoradosParams): Promise<any> {
     }
 
     const data = await response.json();
-    console.log(docgo.result(true, data, "Lista de monitorados obtida."));
+    console.log(docgo.result(true, data, null));
   } catch (error) {
     console.log(docgo.result(false, null, `Erro: ${error}`));
   }

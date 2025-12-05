@@ -51,7 +51,7 @@ async function visualizaDetalhes(
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          documentoID: params.documentoID,
+          id: params.documentoID,
         }),
       }
     );

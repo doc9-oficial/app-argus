@@ -42,17 +42,17 @@ async function atualizaMonitoramento(
       );
       return;
     }
+    const formData = new URLSearchParams();
+    formData.append("documentoID", params.documentoID);
+
     const response = await fetch(
       `${urlBase}/_sol/API/cliente-v2/argus/solicitar_atualizacao/endpoint.php`,
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({
-          documentoID: params.documentoID,
-        }),
+        body: formData,
       }
     );
 
@@ -69,3 +69,5 @@ async function atualizaMonitoramento(
     console.log(docgo.result(false, null, `Erro: ${error}`));
   }
 }
+
+export default atualizaMonitoramento;

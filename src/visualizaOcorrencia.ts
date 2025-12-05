@@ -5,7 +5,7 @@ interface VisualizaDetalhesParams {
   documentoID: string;
 }
 
-async function visualizaDetalhes(
+async function visualizaOcorrencias(
   params: VisualizaDetalhesParams
 ): Promise<any> {
   try {
@@ -52,7 +52,7 @@ async function visualizaDetalhes(
           Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-          documentoID: params.documentoID,
+          id: params.documentoID,
         }),
       }
     );
@@ -63,10 +63,10 @@ async function visualizaDetalhes(
     }
 
     const data = await response.json();
-    console.log(docgo.result(true, data, "Detalhes obtidos com sucesso."));
+    console.log(docgo.result(true, data, null));
   } catch (error) {
     console.log(docgo.result(false, null, `Erro: ${error}`));
   }
 }
 
-export { visualizaDetalhes };
+export default visualizaOcorrencias;
