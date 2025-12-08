@@ -6,7 +6,7 @@ interface AdicionaMonitoramentoParams {
   documento: string;
 }
 
-async function adicionaMonitorament(
+async function adicionaMonitoramento(
   params: AdicionaMonitoramentoParams
 ): Promise<any> {
   try {
@@ -68,4 +68,4 @@ async function adicionaMonitorament(
   }
 }
 
-export default adicionaMonitorament;
+export default adicionaMonitoramento;
