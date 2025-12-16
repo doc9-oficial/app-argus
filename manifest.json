@@ -1,7 +1,7 @@
 {
   "name": "app-argus",
   "version": "1.0.0",
-  "description": "App Argus",
+  "description": "Monitoramento de litigiosidade Argus (Doc9)",
   "auth": {
     "description": {
       "title": "Credenciais de acesso ao sistemas Argus (Doc9)",
@@ -26,11 +26,11 @@
   },
   "functions": {
     "adicionaMonitoramento": {
-      "name": "Argus - Adiciona Monitoramento",
+      "name": "Argus - Adicionar Monitoramento",
       "icon": "Gavel",
       "script": "dist/adicionaMonitoramento.js",
       "description": "Adiciona um novo monitoramento no sistema Argus (Doc9) para o documento especificado.",
-      "category": "doc9",
+      "category": "judicial",
       "values": {
         "tipo": "1 (CPF) | 2 (CNPJ)",
         "documento": "000000000000"
@@ -58,11 +58,11 @@
       }
     },
     "atualizaMonitoramento": {
-      "name": "Argus - Atualiza Monitoramento",
+      "name": "Argus - Atualizar Monitoramento",
       "icon": "User",
       "script": "dist/atualizaMonitoramento.js",
       "description": "Atualiza um monitoramento existente no sistema Argus (Doc9) para o documento especificado.",
-      "category": "doc9",
+      "category": "judicial",
       "values": {
         "documentoID": "1"
       },
@@ -82,11 +82,11 @@
       }
     },
     "listaMonitorados": {
-      "name": "Argus - Lista Monitorados",
+      "name": "Argus - Listar Monitorados",
       "icon": "Scale",
       "script": "dist/listaMonitorados.js",
       "description": "Lista todos os documentos que estão sendo monitorados no sistema Argus (Doc9).",
-      "category": "doc9",
+      "category": "judicial",
       "values": {
         "filtro": ""
       },
@@ -106,11 +106,11 @@
       }
     },
     "visualizaDetalhes": {
-      "name": "Argus - Visualiza Detalhes do Monitoramento",
+      "name": "Argus - Visualizar Detalhes do Monitoramento",
       "icon": "Gavel",
       "script": "dist/visualizaDetalhes.js",
       "description": "Visualiza os detalhes de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
-      "category": "doc9",
+      "category": "judicial",
       "values": {
         "documentoID": "1"
       },
@@ -130,11 +130,11 @@
       }
     },
     "visualizaOcorrencia": {
-      "name": "Argus - Visualiza Ocorrência do Monitoramento",
+      "name": "Argus - Visualizar Ocorrências do Monitoramento",
       "icon": "Gavel",
       "script": "dist/visualizaOcorrencia.js",
       "description": "Visualiza as ocorrências de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
-      "category": "doc9",
+      "category": "judicial",
       "values": {
         "documentoID": "1"
       },
