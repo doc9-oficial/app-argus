@@ -39,9 +39,19 @@
         {
           "name": "tipo",
           "type": "string",
-          "inputType": "text",
+          "inputType": "select",
           "required": true,
-          "label": "Tipo de documento: 1 para CPF, 2 para CNPJ"
+          "label": "Tipo de documento",
+          "options": [
+            {
+              "label": "CPF",
+              "value": "1"
+            },
+            {
+              "label": "CNPJ",
+              "value": "2"
+            }
+          ]
         },
         {
           "name": "documento",
