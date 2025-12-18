@@ -30,7 +30,7 @@
       "icon": "Gavel",
       "script": "dist/adicionaMonitoramento.js",
       "description": "Adiciona um novo monitoramento no sistema Argus (Doc9) para o documento especificado.",
-      "category": "judicial",
+      "category": "juridico",
       "values": {
         "tipo": "CPF",
         "documento": "000000000000"
@@ -72,7 +72,7 @@
       "icon": "User",
       "script": "dist/atualizaMonitoramento.js",
       "description": "Atualiza um monitoramento existente no sistema Argus (Doc9) para o documento especificado.",
-      "category": "judicial",
+      "category": "juridico",
       "values": {
         "documentoID": "1"
       },
@@ -96,7 +96,7 @@
       "icon": "Scale",
       "script": "dist/listaMonitorados.js",
       "description": "Lista todos os documentos que estão sendo monitorados no sistema Argus (Doc9).",
-      "category": "judicial",
+      "category": "juridico",
       "values": {
         "filtro": ""
       },
@@ -120,7 +120,7 @@
       "icon": "Gavel",
       "script": "dist/visualizaDetalhes.js",
       "description": "Visualiza os detalhes de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
-      "category": "judicial",
+      "category": "juridico",
       "values": {
         "documentoID": "1"
       },
@@ -144,7 +144,7 @@
       "icon": "Gavel",
       "script": "dist/visualizaOcorrencia.js",
       "description": "Visualiza as ocorrências de um monitoramento específico no sistema Argus (Doc9) para o documento especificado.",
-      "category": "judicial",
+      "category": "juridico",
       "values": {
         "documentoID": "1"
       },
